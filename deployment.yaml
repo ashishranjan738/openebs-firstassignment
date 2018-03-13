@@ -1,0 +1,19 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: first-webserver
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: first-webserver
+    spec:
+      containers:
+      - name: first-webserver
+        image: ashishranjan738/first-webserver
+        ports:
+        - containerPort: 5000
+        env:
+        - name: uname
+          value: "Ashish Ranjan"
