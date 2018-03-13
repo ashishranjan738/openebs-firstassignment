@@ -1,19 +1,19 @@
-apiVersion: apps/v1beta1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: first-webserver
+  name: webapp1
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: first-webserver
+        app: webapp1
     spec:
       containers:
-      - name: first-webserver
+      - name: webapp1
         image: ashishranjan738/first-webserver
-        ports:
-        - containerPort: 5000
         env:
         - name: uname
           value: "Ashish Ranjan"
+        ports:
+        - containerPort: 5000
